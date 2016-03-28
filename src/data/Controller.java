@@ -45,4 +45,38 @@ public class Controller {
     }
 
 
+    @RequestMapping(value = "/delete",method = RequestMethod.GET)
+    public String delete(Model model){
+
+        return "delete";
+    }
+
+    @RequestMapping(value = "/deleteConfirm",method = RequestMethod.GET)
+    public String deleteConfirm(@RequestParam(value = "id",required = true) int id, Model model){
+
+        purchaseDAO.deletePurchase(id);
+        model.addAttribute("id",id);
+        return "deleteConfirm";
+    }
+
+
+    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    public String search(Model model){
+        return "search";
+    }
+
+    @RequestMapping(value = "/searchResult",method = RequestMethod.GET)
+    public String searchResult(@RequestParam(value = "shopid",required = false)int shopid,
+                               @RequestParam(value = "clientid",required = false)int clientid,
+                               @RequestParam(value = "book",required = false)String book,
+                               Model model){
+
+
+
+
+        model.addAttribute("purchases",purchaseDAO.findData(shopid,clientid,book));
+
+        return "searchResult";
+    }
+
 }

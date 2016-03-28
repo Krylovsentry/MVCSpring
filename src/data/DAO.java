@@ -34,7 +34,7 @@ public interface DAO {
             purchase.setCount(resultSet.getInt("count"));
             purchase.setClientId(resultSet.getInt("client"));
             purchase.setCost(resultSet.getInt("cost"));
-            purchase.setId(resultSet.getInt("number"));
+            purchase.setId(resultSet.getInt("id"));
             purchase.setDate(resultSet.getString("data"));
 
 
