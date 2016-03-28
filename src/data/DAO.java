@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ public interface DAO {
 
 
     //дата, продавец, покупатель, книга, количество, сумма.
-    public void addPurchase(String data, int shopId, int clientId, String book, int count, int cost);
+    public void addPurchase(Date date, int shopId, int clientId, String book, int count, int cost);
     //Форма для удаления данных о покупке по номеру заказа. Содержит поле ввода – номер заказа и кнопку Delete
     public void deletePurchase(int purchaseId);
     // Форма для поиска данных. Содержит поля ввода: продавец, покупатель, книга и кнопку Search
@@ -35,7 +36,7 @@ public interface DAO {
             purchase.setClientId(resultSet.getInt("client"));
             purchase.setCost(resultSet.getInt("cost"));
             purchase.setId(resultSet.getInt("id"));
-            purchase.setDate(resultSet.getString("data"));
+            purchase.setDate(resultSet.getDate("data"));
 
 
             return purchase;

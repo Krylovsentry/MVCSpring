@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 import javax.sql.DataSource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,7 +32,7 @@ public class PurchaseDAO implements DAO {
 
 
     @Override
-    public void addPurchase(String date, int shopId, int clientId, String book, int count, int cost) {
+    public void addPurchase(Date date, int shopId, int clientId, String book, int count, int cost) {
 
         String sql = "INSERT INTO purchase(id, data, shop, client, book, count, cost) " +
                 "VALUES ((SELECT id FROM purchase ORDER BY id DESC LIMIT 1)+1,?,?,?,?,?,?)";

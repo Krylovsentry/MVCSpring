@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Date;
+
 /**
  * Created by Антон on 27.03.2016.
  */
@@ -7,13 +9,13 @@ public class Purchase {
 
     ////id,дата, продавец, покупатель, книга, количество, сумма.
     private int id;
-    private String date;
+    private Date date;
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
-    public String getDate() {
+    public Date getDate() {
 
         return date;
     }

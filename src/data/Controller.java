@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Date;
+
 /**
  * Created by Антон on 27.03.2016.
  */
@@ -26,7 +28,7 @@ public class Controller {
 
     //date=&shopid=&clientid=&book=&count=&cost=
     @RequestMapping(value = "/addConfirm",method = RequestMethod.GET)
-    public String addConfirm(@RequestParam(value = "date",required = true)String date,
+    public String addConfirm(@RequestParam(value = "date",required = true)Date date,
                              @RequestParam(value = "shopid",required = true)int shopid,
                              @RequestParam(value = "clientid",required = true)int clientid,
                              @RequestParam(value = "book",required = true)String book,
