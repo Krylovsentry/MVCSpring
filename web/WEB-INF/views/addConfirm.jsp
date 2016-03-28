@@ -12,9 +12,14 @@
 </head>
 <body>
 Next purchase was successfully added
+<table>
+    <tr><td>Date:</td><td>${date}</td></tr>
+    <tr><td>Shop ID:</td><td>${shopid}</td></tr>
+    <tr><td>Client ID:</td><td>${clientid}</td></tr>
+    <tr><td>Book:</td><td>${book}</td></tr>
+    <tr><td>Count:</td><td>${count}</td></tr>
+    <tr><td>Cost:</td><td>${cost}</td></tr>
 
-
-
-
+</table>
 </body>
 </html>

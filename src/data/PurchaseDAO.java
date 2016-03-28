@@ -31,7 +31,13 @@ public class PurchaseDAO implements DAO {
 
 
     @Override
-    public void addPurchase(String data, int shopId, int clientId, String book, int count, int cost) {
+    public void addPurchase(String date, int shopId, int clientId, String book, int count, int cost) {
+
+        String sql = "INSERT INTO purchase(id, data, shop, client, book, count, cost) " +
+                "VALUES ((SELECT count(*) from purchase)+1,?,?,?,?,?,?)";
+
+        jdbcTemplate.update(sql,date,shopId,clientId,book,count,cost);
+
 
     }
 

@@ -7,15 +7,15 @@ public class Purchase {
 
     ////id,дата, продавец, покупатель, книга, количество, сумма.
     private int id;
-    private String data;
+    private String date;
 
-    public void setData(String data) {
-        this.data = data;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getData() {
+    public String getDate() {
 
-        return data;
+        return date;
     }
 
     private int shopId;
